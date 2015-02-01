@@ -143,6 +143,14 @@ def unique_common_items(list1, list2):
     """
 
 def sum_zero(list1):
+    new_set = set()       # Need a list of lists back, so should initialize an empty list
+
+    for item in list1:  # iterate through each number
+        if -item in list1:                # if the negative version of that number is in the list
+            new_set.add(item, -item)            # add a list of that number and its negative version to new_set
+    
+    print sum_zero([1,2,3,-2,-1])
+
     """Return list of x,y number pair lists from a list where x+y==0
 
     Given a list of numbers, add up each individual pair of numbers.
