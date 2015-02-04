@@ -1,3 +1,6 @@
+
+
+
 #!/usr/bin/env python
 
 
@@ -176,10 +179,18 @@ def sum_zero(list1):
 
     """
 
-    return []
-
 
 def find_duplicates(words):
+    new_list = []                   # initialize am epty list to hold words
+    for i in words:                 # loop through words list 
+        if i not in new_list:       # if i is not in new list
+            new_list.append(i)      # add the word to the list 
+        else:                        # if it is in new_list
+            pass
+    return new_list
+                                    # convert new_dict to a tuple? can you convert second item in tuple to list?
+# print sorted(find_duplicates(["Rose", "is", "a", "rose", "is", "a", "rose"]))
+
     """Given a list of words, return the list with duplicates removed.
 
     For example:
@@ -196,10 +207,21 @@ def find_duplicates(words):
 
     """
 
-    return []
-
 
 def word_length(words):
+    pass                                  # FIXME: come back to this problem
+#     new_dict = {}                       # inititalize an empty dict to put words in
+#     for item in words:                  # iterate through each item in words list 
+#         if len(item) not in new_dict:   # if the item's length is NOT already in dict 
+#             new_dict[len(item)] = new_dict[item]    # add the item & items length to new_dict, ie. set key value pair equal to [((length of item),[words])]
+#         else:                           # if the item's length IS already in the dict
+#     return new_dict                     # add the item, but not the length 
+    
+
+# # QUESTION for HEATHER: How do I know what data type to use? 
+
+# print word_length(["ok", "an", "apple", "a", "day"])
+
     """Given list of words, return list of ascending [(len, [words])].
 
     Given a list of words, return a list of tuples, ordered by word-length.
@@ -212,8 +234,6 @@ def word_length(words):
         [(1, ['a']), (2, ['ok', 'an']), (3, ['day']), (5, ['apple'])]
 
     """
-
-    return []
 
 
 def adv_word_length_sorted_words(words):
@@ -235,6 +255,38 @@ def adv_word_length_sorted_words(words):
 
 
 def pirate_talk(phrase):
+    pir_dict = {'sir': 'matey',
+            'hotel': 'fleabag inn',
+            'student': 'swabbie',
+            'boy': 'matey',
+            'madam': 'proud beauty',
+            'professor': 'foul blaggart',
+            'restaurant': 'gallery',
+            'your': 'yer',
+            'excuse': 'arr',
+            'students': 'swammbies',
+            'are': 'be',
+            'lawyer': 'foul blaggart',
+            'the': "th'",                     
+            'restroom': 'head',
+            'my': 'me',
+            'hello': 'avast',
+            'is': 'be',
+            'man': 'matey',
+        }
+
+    ptalk = []               # create an empty list, that will be later converted into a string
+    phrase = phrase.split()  # splits the phrase into a list of strings made up of words in the phrase 
+
+    for word in phrase:                     # loop through all words in phrase
+        if word in pir_dict:                # if word is in the pirate dictionary
+            ptalk.append(pir_dict[word])    # append the key mapped to that word in the pirate dictionary to the ptalk list
+        else:                               # if the word is NOT in the pirate dictionary
+            ptalk.append(word)              # just add the word itself 
+    return " ".join(ptalk)                  # return a string joined with spaces from the list ptalk
+
+# print pirate_talk("my student is not a man"
+
     """Translate phrase to pirate talk.
 
     Given a phrase, translate each word to the Pirate-speak equivalent.
@@ -277,8 +329,12 @@ def pirate_talk(phrase):
 
     """
 
-    return ""
 
+
+    # if the word NOT IN pir_dict
+    # add the word as is
+    # if word IS IN pir_dict 
+    # take the value for the word from the pir_dict dictionary (ie look up the value and replace it)
 
 ##############################################################################
 # END OF SKILLS TEST; YOU CAN STOP HERE.
